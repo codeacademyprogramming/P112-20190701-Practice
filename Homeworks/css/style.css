@@ -1,0 +1,186 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #fff;
+    border-radius: 50px;
+    color: rgb(119, 119, 119);
+    /* transition: all 0.3s; */
+    position: relative;
+}
+
+.btn::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    top: 0;
+    border-radius: 50px;
+    width: 100%;
+    height: 100%;
+    border: 1px solid;
+    opacity: 0;
+    /* transition: all 0.5s; */
+}
+
+
+
+@keyframes btn-hover {
+    0% {    
+        opacity: 1;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1.2);
+    }
+}
+
+.btn:hover {
+    background-color: rgb(202, 199, 199);
+}
+
+.btn:hover::before {
+    animation: btn-hover 1s ease-in;
+    animation-iteration-count: infinite;
+
+}
+
+nav ul {
+    list-style: none;
+}
+nav ul li {  
+    display: inline-block;
+    padding: 10px;
+    font-size: 20px;
+}
+
+nav ul li:first-child {
+    padding-left: 0;
+}
+
+nav ul li a {  
+    color: #fff;
+}
+
+header{
+    height: 60px;
+    background-color: rgb(163, 142, 22);
+    display: flex;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+}
+
+
+.section-intro {
+    height: calc(100vh - 60px);
+    transform: translateY(60px);
+    background-image: url("../img/bg1.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: scroll;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+
+    color: rgb(59, 59, 59);
+}
+
+.section-intro h1 {
+    font-size: 50px;
+    line-height: 1;
+    margin: 20px 0;
+}
+.section-hottest .row.headphone-items {
+    margin: 0 -15px;
+}
+.section-hottest .headphone-item {
+    padding: 0 15px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+.section-hottest .headphone-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.section-hottest .headphone-item .badge {
+    position: absolute;
+    left: 50px;
+    top: 20px;
+    background-color: #fac769;
+    border-radius: 50px;
+    padding: 10px;
+    font-weight: 300;
+}
+
+.section-hottest .headphone-item .content {
+    background-color: #fac769;
+    padding: 15px 20px;
+}
+
+
+.section-new .row.headphone-new-items {
+    margin: 0 -15px;
+}
+
+.section-new .headphone-new-item {
+    padding: 0 15px;
+    position: relative;
+    cursor: pointer;
+}
+.section-new .headphone-new-item:hover .overlay{
+    opacity: 1;
+}
+
+.section-new .headphone-new-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+.section-new .headphone-new-item .overlay {
+    position: absolute;
+    background-color: #6e6e6e87;;
+    left: 15px;
+    right: 15px;
+    top: 0;
+    height: 200px;
+    opacity: 0;
+    transition: all 0.4s;
+}
+
+.section-new .headphone-new-item .overlay .plus {
+    width: 50px;
+    height: 50px;
+    background-color: gray;
+    border-radius: 50px;
+    text-align: center;
+    line-height: 50px;
+    color: #fff;
+    font-size: 36px;
+    
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.section-new .headphone-new-item .overlay .description {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+}
